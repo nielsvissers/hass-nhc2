@@ -1,5 +1,5 @@
 {
-    "name": "Niko Home Control II NV",
+    "name": "Niko Home Control II NV2",
     "domains": ["light", "switch"],
     "iot_class": ["Local Push"],
     "render_readme": true,
