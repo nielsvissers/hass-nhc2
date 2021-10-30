@@ -1,11 +1,11 @@
 {
   "domain": "nhc2",
-  "name": "Niko Home Control II",
-  "requirements": ["nhc2-coco==1.4.1"],
+  "name": "Niko Home Control II (Fork)",
+  "requirements": ["nhc2-coco-2==1.4.3"],
   "config_flow": true,
-  "issue_tracker": "https://github.com/filipvh/hass-nhc2/issues",
-  "documentation": "https://github.com/filipvh/hass-nhc2/blob/master/README.md",
-  "codeowners": ["@filipvh"],
-  "version": "2021.4.1",
+  "issue_tracker": "https://github.com/nielsvissers/hass-nhc2/issues",
+  "documentation": "https://github.com/nielsvissers/hass-nhc2/blob/master/README.md",
+  "codeowners": ["@filipvh", "@nielsvissers"],
+  "version": "1.6.1",
   "iot_class": "local_push"
 }
