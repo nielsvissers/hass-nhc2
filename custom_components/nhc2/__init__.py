@@ -12,7 +12,7 @@ from .config_flow import Nhc2FlowHandler  # noqa  pylint_disable=unused-import
 from .const import DOMAIN, KEY_GATEWAY, CONF_SWITCHES_AS_LIGHTS
 from .helpers import extract_versions
 
-REQUIREMENTS = ['nhc2-coco==1.4.1']
+#REQUIREMENTS = ['nhc2-coco==1.4.1']
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -78,8 +78,6 @@ async def async_setup_entry(hass, entry):
         switches_as_lights=entry.data[CONF_SWITCHES_AS_LIGHTS]
     )
 
-
-
     async def on_hass_stop(event):
         """Close connection when hass stops."""
         coco.disconnect()
@@ -104,7 +102,7 @@ async def async_setup_entry(hass, entry):
 
             for platform in FORWARD_PLATFORMS:
                 _LOGGER.info("Forwarding platform: %s", platform)
-                hass.async_create_task(
+                hass.create_task(
                     hass.config_entries.async_forward_entry_setup(entry, platform)
                 )
 
