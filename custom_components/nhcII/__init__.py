@@ -69,7 +69,7 @@ FORWARD_PLATFORMS = (
 
 async def async_setup_entry(hass, entry):
     """Create a NHC2 gateway."""
-    from nhc2_coco import CoCo
+    from nhc2_coco_2 import CoCo
     coco = CoCo(
         address=entry.data[CONF_HOST],
         username=entry.data[CONF_USERNAME],
@@ -88,17 +88,20 @@ async def async_setup_entry(hass, entry):
             _LOGGER.debug('Sysinfo: NhcVersion %s - CocoImage %s',
                           nhc_version,
                           coco_image)
-            dev_reg.async_get_or_create(
-                config_entry_id=entry.entry_id,
-                connections=set(),
-                identifiers={
-                    (DOMAIN, entry.data[CONF_USERNAME])
-                },
-                manufacturer='Niko',
-                name='Home Control II',
-                model='Connected controller',
-                sw_version=nhc_version + ' - CoCo Image: ' + coco_image,
-            )
+            try:
+                dev_reg.async_get_or_create(
+                    config_entry_id=entry.entry_id,
+                    connections=set(),
+                    identifiers={
+                        (DOMAIN, entry.data[CONF_USERNAME])
+                    },
+                    manufacturer='Niko',
+                    name='Home Control II',
+                    model='Connected controller',
+                    sw_version=nhc_version + ' - CoCo Image: ' + coco_image,
+                )
+            except Exception as e:
+                _LOGGER.error(e)
 
             for platform in FORWARD_PLATFORMS:
                 _LOGGER.info("Forwarding platform: %s", platform)

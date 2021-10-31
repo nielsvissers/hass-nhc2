@@ -1,0 +1,11 @@
+{
+  "domain": "nhcii",
+  "name": "Niko Home Control II (Forked)",
+  "requirements": ["nhc2-coco-2==1.4.6"],
+  "config_flow": true,
+  "issue_tracker": "https://github.com/filipvh/hass-nhc2/issues",
+  "documentation": "https://github.com/filipvh/hass-nhc2/blob/master/README.md",
+  "codeowners": ["@filipvh"],
+  "version": "2021.4.1",
+  "iot_class": "local_push"
+}

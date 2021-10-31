@@ -1,7 +1,7 @@
 """Consts used by NHC2."""
 from homeassistant.const import CONF_HOST  # noqa pylint: disable=unused-import
 
-DOMAIN = 'nhc2'
+DOMAIN = 'nhcII'
 KEY_GATEWAY = 'nhc2_gateway'
 BRAND = 'Niko'
 LIGHT = 'Light'
