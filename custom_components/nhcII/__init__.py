@@ -69,7 +69,7 @@ FORWARD_PLATFORMS = (
 
 async def async_setup_entry(hass, entry):
     """Create a NHC2 gateway."""
-    from nhc2_coco_2 import CoCo
+    from .nhc2_coco_2 import CoCo
     coco = CoCo(
         address=entry.data[CONF_HOST],
         username=entry.data[CONF_USERNAME],
